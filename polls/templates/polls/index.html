@@ -1,0 +1,12 @@
+<div>
+    <p style="text-align:center; font-size:50px;">설문조사 페이지 만들기</p>
+        {% if latest_question_list %}
+            <ul>
+            {% for question in latest_question_list %}
+                <li><a href="/polls/{{ question.id }}/">{{ question.question_text }} {{ question.pub_date }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+</div>
