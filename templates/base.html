@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  {% include 'head.html' %}
+  <body>
+    <div id="top">
+      <h1 id="h1_title">HTML/CSS 기본구조 및 정리</h1>
+      <div>
+        <a href="#footer">최하단이동</a>
+      </div>
+      <div id="header">
+        <div id="details">
+            <h3 id="title_1">1. 기본구조</h3>
+            <div class="basic_forms">
+              <ul>
+                <li>기본적으로 HTML은 head-body로 이루어져 있다.</li>
+                <li>최상단에 <!DOCTYPE html>을 선언한다.</li>
+                <li>lang을 통해 언어를 선택한다.</li>
+                <li>meta태그로 인코딩방식을 설정한다.</li>
+                <li>head태그에 style, 참고할 내용 등 필요한 정보를 담는다.</li>
+                <li>body태그에 본문 내용을 담는다.</li>
+              </ul>
+            </div>
+            <br>
+            <br>
+            <h3 id="title_2">2. form관련 요소</h3>
+            <p>form 요소는 설문조사 페이지와 비슷하다고 보면 된다.</p>
+            <div class="basic_forms">
+              <ul>
+                <li>fieldset: form의 영역을 구분해준다.</li>
+                <li>label: input-type-id와 같은 내용을 적음으로써 텍스트와 폼을 연동한다.</li>
+                <li>input: 'text', 'submit', 'radio', 'password', 'reset', 'button' 등 다양한 type으로 활용된다.</li>
+                <ul>
+                  <li>input-type:"text" 텍스트 작성 폼</li>
+                    <label for="userid">(예)아이디: </label><input type="text" placeholder="아이디" id="userid"><br>
+                  <li>input-type:"password" 비밀번호 작성 폼</li>
+                    <label for="password">(예)비밀번호: </label><input type="password" placeholder="비밀번호" id="password"><br>
+                  <li>input-type:"radio" 중복선택이 불가한 선택 폼</li>
+                    (예)성별: <label for="male">남자</label> <input type="radio" name="gender" id="male" checked>
+                    <label for="female">여자</label> <input type="radio" name="gender" id="female"><br>
+                  <li>input-type:"checkbox" 중복선택이 가능한 선택 폼</li>
+                    <legend><부가정보></legend>
+                    (예)취미: 러닝<input type="checkbox" name="hobby" checked>
+                    등산<input type="checkbox" name="hobby">
+                    헬스<input type="checkbox" name="hobby">
+                    음악감상<input type="checkbox" name="hobby"><br>
+                  <li>input-type:"file" 파일 업로드 폼</li>
+                    (예)사진 업로드: <input type="file"><br>
+                  <li>input-type:"submit" 전송 폼(==button-type:"submit")</li>
+                    (예)input: <input type="submit" value="전송"> / button: <button type="submit">전송</button><br>
+                  <li>input-type:"reset" 취소 폼(==button-type:"reset")</li>
+                    (예)input: <input type="reset"value="취소"> / button: <button type="reset">취소</button><br>
+                  <li>input-type:"button" 등록 폼</li>
+                    (예)input: <input type="button" value="등록"> / button: <button type="button">등록</button><br>
+                  <li>input-type:"image" 이미지 등록 폼</li>
+                    (예)<input type="image" src="https://www.freeiconspng.com/thumbs/login-button-png/login-button-png-12.png" alt="로그인" width="100" height="50">
+                </ul><br>
+                <li>select: option태그를 통해 내부 내용을 추가할 수 있는 선택 폼</li>
+                  (예)사는 지역: <select>
+                    <option>서울</option>
+                    <option>수도권</option>
+                    <option>대구</option>
+                    <option>부산</option>
+                  </select><br>
+                <li>textarea: text를 작성할 수 있는 폼(row, cols를 통해 가로 세로 크기 지정)</li>
+                  <div>
+                    (예)자기소개: 지원동기를 적어주세요(500자)<div>
+                      <textarea name="name" rows="8" cols="80" placeholder="작성해주세요."></textarea><br>
+                    </div>
+                  </div>
+              </ul>
+            <br><br>
+            <h3 id="title_3">3. image</h3>
+            <div class="image" style="background-color: orange;">
+              <ul>
+                <li>이미지는 절대경로와 상대경로로 설정한다.</li>
+                <img src="C:\Users\haech\Desktop\pinterest/이주영1.jfif" alt="이주영" style="width: 200px; height: 300px; margin-top: 1rem;">
+              </ul>
+            </div>
+            <h3 id="title_4">4. semantic</h3>
+            <div class="semantic">
+              <ul>
+                <li>굵은(b) vs 중요한(strong)</li>
+                (예) <b>굵은</b> | <strong>중요한</strong>
+                <li>기울어진(i) vs 강조하는(em)</li>
+                (예) <i>기울어진</i> | <em>강조하는</em>
+                <li>밑줄친(u) vs 새롭게 추가된(ins)</li>
+                (예) <u>밑줄친</u> | <ins>새롭게 추가된</ins>
+                <li>중간선(s) vs 삭제된(del)</li>
+                (예) <s>중간선</s> | <del>삭제된</del>
+              </ul>
+            </div>
+            <h3 id="title_5">5. table</h3>
+            <div class="table">
+              <ul>
+                <h5>표 만들기</h5>
+                <li>table/thead/tfoot/tbody/th(열)/tr(행)/td(셀)로 이루어져 있다.</li>
+                <li>colspan: 가로방향(열방향) 병합</li>
+                <li>rowspan: 세로방향(행방향) 병합</li>
+              </ul>
+              (예) <h4>Table</h4>
+              <table style="text-align: center;">
+                <style media="screen">
+                  th, td { border: 1px solid;}
+                </style>
+                <caption>table title</caption>
+                <thead>
+                  <th>행/열</th>
+                  <th>열 이름 1</th>
+                  <th>열 이름 2</th>
+                  <th>열 이름 3</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>행 이름 1</td>
+                    <td>셀 2</td>
+                    <td>셀 3</td>
+                    <td>셀 4</td>
+                  </tr>
+                  <tr>
+                    <td>행 이름 2</td>
+                    <td>셀 2</td>
+                    <td>셀 3</td>
+                    <td>셀 4</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <td colspan="2">sum</td>
+                </tfoot>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="golink">
+        <a href="#top">최상단 이동</a>
+      </div>
+    </div>
+  </body>
+</html>
